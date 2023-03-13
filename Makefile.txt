@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -g -Wall -lm -std=c99
+all: build
+
+build: quadtree
+
+quadtree: quadtree.o
+	$(CC) -o quadtree quadtree.o $(CFLAGS)
+
+quadtree.o: quadtree.c
+	$(CC) -c quadtree.c $(CFLAGS)
+
+clean:
+	rm -rf *.o quadtree
